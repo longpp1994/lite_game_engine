@@ -1,11 +1,8 @@
 cmake_minimum_required(VERSION 3.0.0)
-project(lite_game_engine VERSION 0.1.0)
-
-include(CTest)
-enable_testing()
-
-add_library(lite_game_engine lite_game_engine.cpp)
-
-set(CPACK_PROJECT_NAME ${PROJECT_NAME})
-set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
-include(CPack)
+set(CMAKE_C_STANDARD 11)
+set(CMAKE_CXX_STANDARD 11)
+project(LiteGameEngine)
+include_directories("${PROJECT_SOURCE_DIR}/framework/common")
+include_directories("${PROJECT_SOURCE_DIR}/framework/interface")
+add_subdirectory(framework)
+add_subdirectory(empty)
