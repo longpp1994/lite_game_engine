@@ -1,7 +1,13 @@
 #include <windows.h>
 #include <windowsx.h>
 #include <tchar.h>
-#include <d2d1.h>
+#include <stdint.h>
+
+#include <d3d11.h>
+#include <d3d11_1.h>
+#include <d3dcompiler.h>
+#include <DirectXMath.h>
+#include <DirectXPackedVector.h>
 
 ID2D1Factory            *pFactory = nullptr;
 ID2D1HwndRenderTarget   *pRenderTarget = nullptr;
