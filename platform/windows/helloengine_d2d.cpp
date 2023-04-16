@@ -45,7 +45,7 @@ HRESULT CreateGraphicsResource(HWND hWnd) {
     return hr;
 }
 
-void DiscardGraphicsResouces() {
+void DiscardGraphicsResources() {
     SafeRelease(&pRenderTarget);
     SafeRelease(&pLightSlateGrayBrush);
     SafeRelease(&pCornflowerBlueBrush);
@@ -174,7 +174,7 @@ LRESULT CALLBACK WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lPara
 
                     hr = pRenderTarget->EndDraw();
                     if (FAILED(hr) || hr == D2DERR_RECREATE_TARGET) {
-                        DiscardGraphicsResouces();
+                        DiscardGraphicsResources();
                     }
 
                     EndPaint(hWnd, &ps);
@@ -194,7 +194,7 @@ LRESULT CALLBACK WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lPara
             wasHandled = true;
             break;
         case WM_DESTROY:
-            DiscardGraphicsResouces();
+            DiscardGraphicsResources();
             if (pFactory) {
                 pFactory->Release();
                 pFactory = nullptr;
